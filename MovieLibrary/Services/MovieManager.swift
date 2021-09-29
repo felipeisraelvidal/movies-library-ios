@@ -10,7 +10,7 @@ import CoreData
 
 final class MovieManager: NSObject, ObservableObject {
     @Published var movies = [Movie]()
-    @Published var sections = [String]()
+    @Published var sections = [String : [Movie]]()
     
     private let context: NSManagedObjectContext
     private let fetchedResultsController: NSFetchedResultsController<Movie>
@@ -43,7 +43,11 @@ final class MovieManager: NSObject, ObservableObject {
             try fetchedResultsController.performFetch()
             
             if let sections = fetchedResultsController.sections, !sections.isEmpty {
-                self.sections = sections.map({ $0.name })
+                for section in sections {
+                    if let movies = section.objects as? [Movie] {
+                        self.sections[section.name] = movies
+                    }
+                }
             }
             
             movies = fetchedResultsController.fetchedObjects ?? []

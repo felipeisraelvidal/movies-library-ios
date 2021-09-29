@@ -13,11 +13,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(manager.sections, id: \.self) { section in
+                ForEach(Array(manager.sections.keys.sorted(by: >)), id: \.self) { section in
                     Section(
                         header: Text(section)
                     ) {
-                        ForEach(manager.movies.filter({ $0.format == section }), id: \.id) { movie in
+                        ForEach(manager.sections[section] ?? [], id: \.id) { movie in
                             HStack(spacing: 16) {
                                 movie.pngImage
                                 
