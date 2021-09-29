@@ -9,11 +9,19 @@
 import Foundation
 import CoreData
 import UIKit
+import SwiftUI
 
 @objc(Movie)
 public class Movie: NSManagedObject, Decodable {
     enum CodingKeys: CodingKey {
         case name, rating, image, format
+    }
+    
+    var pngImage: Image? {
+        if let imageData = self.image, let image = UIImage(data: imageData) {
+            return Image(uiImage: image)
+        }
+        return nil
     }
     
     required convenience public init(from decoder: Decoder) throws {
