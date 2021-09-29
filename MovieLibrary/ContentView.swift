@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var manager: MovieManager
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List(manager.movies, id: \.id) { movie in
+                Text(movie.name)
+            }
+            .listStyle(InsetListStyle())
+            .navigationBarTitle("Movie Library")
+        }
     }
 }
 
