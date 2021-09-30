@@ -59,6 +59,7 @@
 		55044E982704100C0021B0E3 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		55044E9B270418080021B0E3 /* CodingUserInfoKey+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Extension.swift"; sourceTree = "<group>"; };
 		55044E9E27041DC40021B0E3 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		5534C7B827053B4B0072AC69 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		556F0AD62704B7010063CF33 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +91,7 @@
 		55044E5627040DB20021B0E3 = {
 			isa = PBXGroup;
 			children = (
+				5534C7B827053B4B0072AC69 /* README.md */,
 				55044E6127040DB20021B0E3 /* MovieLibrary */,
 				55044E7227040DB80021B0E3 /* MovieLibraryTests */,
 				55044E7C27040DB80021B0E3 /* MovieLibraryUITests */,
